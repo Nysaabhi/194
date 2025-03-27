@@ -119,27 +119,24 @@ body {
     scroll-behavior: smooth; 
 }
 
-/* Keep existing styles */
 .message {
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
     display: flex;
     gap: 10px;
-    max-width: 100%;
     margin-bottom: 16px;
     animation: messageSlide 0.3s ease-out;
-}
-
-.bot-message {
     width: 100%;
     max-width: 100%;
+}
+
+/* Bot message styles */
+.bot-message {
     align-self: flex-start;
-    margin-right: 0;
-    padding: 0;
+    width: 100%;
+    max-width: 100%;
 }
 
 .bot-message .message-content {
-    width: 100%;
-    max-width: 100%;
     background: transparent;
     padding: 16px;
     border-radius: 0;
@@ -147,44 +144,34 @@ body {
     font-size: 16px;
     line-height: 1.6;
     position: relative;
-    margin-right: 0;
-    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
 }
 
-/* Ensure consistent spacing on different devices */
-@media (max-width: 768px) {
-    .bot-message .message-content {
-        padding: 12px;
-        font-size: 15px;
-    }
-}
-
-/* Remove any additional spacing or margins */
-.chat-messages {
-    padding: 20px 10px;
-}
-
-/* Ensure input and messages are consistently styled */
-.chat-input-container {
-    padding: 10px;
-}
-
-/* Keep user message styles as they are */
+/* User message styles */
 .user-message {
     align-self: flex-end;
     flex-direction: row-reverse;
+    width: 100%;
+    max-width: 100%;
 }
 
 .user-message .message-content {
     background: rgba(255, 215, 0, 0.1);
     border-radius: 16px;
+    width: auto;
+    max-width: 80%;
 }
 
+
+/* Welcome message styles */
 .welcome-message {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    width: 80%;
+    max-width: 100%;
 }
 
 .welcome-avatar {
@@ -202,11 +189,11 @@ body {
 }
 
 .welcome-content {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 12px 16px;
-  border-radius: 16px 16px 16px 16px;
-  color: var(--text-light);
-  max-width: 80%;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px 16px;
+    border-radius: 16px;
+    color: var(--text-light);
+    width: 15%;
 }
 
 .welcome-content p {
@@ -223,7 +210,7 @@ body {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .welcome-message {
-        max-width: 90%;
+        width: 80%;
     }
 }
 
@@ -269,14 +256,22 @@ body {
     padding-bottom: 16px;
 }
 
+/* Remove any padding that might be causing the issue */
+.chat-messages {
+    padding: 20px 10px !important;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .bot-message {
-        max-width: 100%;
+    .bot-message .message-content,
+    .user-message .message-content,
+    .welcome-content {
+        width: 85%;
+        padding: 12px;
     }
     
-    .bot-message .message-content {
-        padding: 12px 24px 12px 12px;
+    .user-message .message-content {
+        max-width: 90%;
     }
 }
 
@@ -7846,6 +7841,7 @@ style.textContent = `
 @media (max-width: 480px) {
   .real-estate-container {
     width: 100vw;
+    margin-left: 20px; /* Remove left margin */
   }
 
   .property-item {
@@ -8039,7 +8035,7 @@ style.textContent = `
 /* Media Queries for Mobile Devices */
 @media (max-width: 480px) {
   .job-item {
-    width: 82vw;
+    width: 85vw;
     padding: 12px;
     border-radius: 12px;
     margin-bottom: 12px;
@@ -8342,7 +8338,7 @@ style.textContent = `
 /* Media Queries for Mobile Devices */
 @media (max-width: 480px) {
   .vehicle-item {
-    width: 80vw;
+    width: 85vw;
     padding: 12px;
     border-radius: 12px;
     margin-bottom: 12px;
